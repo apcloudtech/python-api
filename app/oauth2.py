@@ -5,6 +5,10 @@ from fastapi import Depends, status, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
+
+# Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 # secret_key
 # algorithm

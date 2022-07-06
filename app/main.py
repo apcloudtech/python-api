@@ -9,6 +9,8 @@ from .config import settings
 
 app = FastAPI()
 
+# CORS
+# https://fastapi.tiangolo.com/tutorial/cors/
 origins = ["*"]
 
 app.add_middleware(
@@ -19,6 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Routers: https://www.fastapitutorial.com/blog/fastapi-route/
+# https://fastapi.tiangolo.com/tutorial/bigger-applications/
 app.include_router(post.router)
 app.include_router(user.router)
 app.include_router(auth.router)
@@ -27,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello World!!!!!!"}
+    return {"message": "Hello World exclamation point"}

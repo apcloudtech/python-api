@@ -9,6 +9,11 @@ router = APIRouter(
 )
 
 
+# router: https://www.fastapitutorial.com/blog/fastapi-route/
+# response_model: https://fastapi.tiangolo.com/tutorial/response-model/
+# Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+
+
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.UserOut)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     hashed_password = utils.hash(user.password)

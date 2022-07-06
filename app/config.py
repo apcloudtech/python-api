@@ -1,5 +1,7 @@
 from pydantic import BaseSettings
 
+# BaseSesttings: https://pydantic-docs.helpmanual.io/usage/settings/
+
 
 class Settings(BaseSettings):
     database_hostname: str

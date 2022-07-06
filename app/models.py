@@ -1,4 +1,3 @@
-from csv import unregister_dialect
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import text
@@ -7,9 +6,13 @@ from sqlalchemy.sql.sqltypes import TIMESTAMP
 from .database import Base
 
 
+# models: https://pydantic-docs.helpmanual.io/usage/models/
+# __table_name__ : https://docs.sqlalchemy.org/en/14/orm/declarative_tables.html#orm-declarative-table-configuration
+# ForeignKey: https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html
+
+# Defines output for posts
 class Post(Base):
     __tablename__ = "posts"
-
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
     content = Column(String, nullable=False)
@@ -21,6 +24,7 @@ class Post(Base):
     owner = relationship("User")
 
 
+# defines output for users
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, nullable=False)
@@ -31,6 +35,7 @@ class User(Base):
     phone_number = Column(String)
 
 
+# defines output for likes
 class Vote(Base):
     __tablename__ = "votes"
     user_id = Column(Integer, ForeignKey(

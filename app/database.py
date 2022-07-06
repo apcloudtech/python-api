@@ -6,15 +6,17 @@ from .config import settings
 # from psycopg2.extras import RealDictCursor
 # import time
 
+# calls class created in config.py, variables are defined in .env file.
 SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
+# Initializes connection to DB only whehn query is issued. https://fastapi.tiangolo.com/tutorial/sql-databases/?h=database
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
-# Dependency
+# yield: https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/?h=
 
 
 def get_db():

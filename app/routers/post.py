@@ -12,6 +12,10 @@ router = APIRouter(
 )
 
 
+# router: https://www.fastapitutorial.com/blog/fastapi-route/
+# response_model: https://fastapi.tiangolo.com/tutorial/response-model/
+# Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+
 # @router.get("/", response_model=List[schemas.Post])
 @router.get("/", response_model=List[schemas.PostOut])
 def get_posts(db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user),

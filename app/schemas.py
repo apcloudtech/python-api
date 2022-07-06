@@ -4,6 +4,8 @@ from typing import Optional
 
 from app.database import Base
 
+# schemas: https://www.fastapitutorial.com/blog/schemas-in-fastapi/
+
 
 class PostBase(BaseModel):
     title: str

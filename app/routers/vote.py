@@ -1,4 +1,3 @@
-from multiprocessing import synchronize
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
 from .. import schemas, database, models, oauth2
@@ -8,6 +7,11 @@ router = APIRouter(
     tags=['Vote']
 )
 
+
+# router: https://www.fastapitutorial.com/blog/fastapi-route/
+# response_model: https://fastapi.tiangolo.com/tutorial/response-model/
+# Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+# HTTPException: https://fastapi.tiangolo.com/tutorial/handling-errors/
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 def vote(vote: schemas.Vote, db: Session = Depends(database.get_db), current_user: int = Depends

@@ -1,5 +1,7 @@
 from passlib.context import CryptContext
 
+# CryptContext: https://passlib.readthedocs.io/en/stable/lib/passlib.context.html
+
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

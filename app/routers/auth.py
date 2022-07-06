@@ -6,6 +6,11 @@ from .. import database, schemas, models, utils, oauth2
 
 router = APIRouter(tags=['Authentication'])
 
+# router: https://www.fastapitutorial.com/blog/fastapi-route/
+# response_model: https://fastapi.tiangolo.com/tutorial/response-model/
+# Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+# HTTPException: https://fastapi.tiangolo.com/tutorial/handling-errors/
+
 
 @router.post('/login', response_model=schemas.Token)
 def login(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(database.get_db)):
