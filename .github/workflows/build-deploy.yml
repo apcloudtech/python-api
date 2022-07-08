@@ -1,0 +1,11 @@
+name: Build and Deploy Code
+on: [push, pull_request]
+
+jobs:
+  job1:
+    runs_on: ubunto-latest
+    steps:
+      - name: pulling git repo
+        uses: actions/checkoutv2
+      - name: say hi to andrew
+        run: echo "hi andrew"

@@ -15,6 +15,7 @@ router = APIRouter(
 # router: https://www.fastapitutorial.com/blog/fastapi-route/
 # response_model: https://fastapi.tiangolo.com/tutorial/response-model/
 # Oauth: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/?h=oauth
+# HTTPException: https://fastapi.tiangolo.com/tutorial/handling-errors/
 
 # @router.get("/", response_model=List[schemas.Post])
 @router.get("/", response_model=List[schemas.PostOut])

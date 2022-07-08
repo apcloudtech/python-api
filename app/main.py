@@ -31,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello World exclamation point"}
+    return {"message": "bind mount works, i did need the command"}
