@@ -91,7 +91,7 @@ jobs:
       - name: deploy to ubuntu server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.HOST_DNS}}
+          host: ${{secrets.PROD_DNS}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.EC2_SSH_KEY}}
           script: |
