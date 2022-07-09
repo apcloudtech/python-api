@@ -89,11 +89,11 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
       - name: deploy to ubuntu server
-        uses: appleboy/ssh-action@master
+        uses: garygrossgarten/github-action-ssh@release
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY}}
+          privateKey: ${{ secrets.EC2_SSH_KEY}}
           port: 22
           script: |
             sudo su
