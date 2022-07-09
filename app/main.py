@@ -31,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "bind mount works, i did need the command"}
+    return {"message": "this comes from the ci/cd pipeline!"}
