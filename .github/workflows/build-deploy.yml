@@ -95,7 +95,7 @@ jobs:
           username: ${{ secrets.PROD_USERNAME }}
           privateKey: ${{ secrets.EC2_SSH_KEY}}
           port: 22
-          script: |
+          command: |
             sudo su
             su - andrew
             cd app/src
