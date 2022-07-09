@@ -93,7 +93,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
-          password: ${{ secrets.EC2_SSH_KEY}}
+          key: ${{ secrets.EC2_SSH_KEY}}
           script: |
             sudo su
             su - andrew
