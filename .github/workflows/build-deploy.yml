@@ -94,7 +94,7 @@ jobs:
           host: ${{ secrets.APPLE_HOST }}
           username: ${{ secrets.APPLE_USERNAME }}
           privateKey: ${{ secrets.EC2_SSH_KEY}}
-          command: |
+          script: |
             sudo su
             su - andrew
             cd app/src
