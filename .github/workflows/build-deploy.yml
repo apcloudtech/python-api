@@ -88,16 +88,15 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
-      - name: deploy to ubuntu server
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USERNAME }}
-          privateKey: ${{ secrets.EC2_SSH_KEY}}
-          port: 22
-          command: |
-            sudo su
-            su - andrew
-            cd app/src
-            git pull
-            echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
+      # - name: deploy to ubuntu server
+      #   uses: appleboy/ssh-action@v0.1.3
+      #   with:
+      #     host: ${{ secrets.PROD_HOST }}
+      #     username: ${{ secrets.PROD_USERNAME }}
+      #     privateKey: ${{ secrets.EC2_SSH_KEY}}
+      #     command: |
+      #       sudo su
+      #       su - andrew
+      #       cd app/src
+      #       git pull
+      #       echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
