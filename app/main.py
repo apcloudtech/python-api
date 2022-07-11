@@ -31,4 +31,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "fifsky works!"}
+    return {"message": "im confused, did i need to wait longer?"}
