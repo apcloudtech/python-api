@@ -1,5 +1,5 @@
 import pytest
-from app.calculations import add
+from calculations import add
 
 
 @pytest.mark.parametrize("num1, num2, expected", [

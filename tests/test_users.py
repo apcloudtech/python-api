@@ -1,7 +1,7 @@
-from app import schemas
+import schemas
 from jose import jwt
 import pytest
-from app.config import settings
+from core.config import settings
 
 # def test_root(client):
 #     res = client.get("/")
