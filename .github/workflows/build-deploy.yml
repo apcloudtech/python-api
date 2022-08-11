@@ -89,6 +89,8 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
 #https://lightrains.com/blogs/deploy-aws-ec2-using-github-actions/
+            # git fetch origin
+            # git reset --hard origin/main
       - name: deploy to ubuntu server
         uses: fifsky/ssh-action@master
         with:
@@ -96,8 +98,7 @@ jobs:
             sudo su
             su - andrew
             cd app/src
-            git fetch origin
-            git reset --hard origin/main
+
             git pull
             echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
           host: ${{ secrets.APPLE_HOST }}
