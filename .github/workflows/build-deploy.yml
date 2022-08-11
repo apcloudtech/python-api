@@ -88,7 +88,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
-
+#https://lightrains.com/blogs/deploy-aws-ec2-using-github-actions/
       - name: deploy to ubuntu server
         uses: fifsky/ssh-action@master
         with:
