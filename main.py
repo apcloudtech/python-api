@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from core.config import settings
-from routers.route_homepage import general_pages_router
+from routers.homepage import general_pages_router
 from routers import auth, post, user, vote
 
 
