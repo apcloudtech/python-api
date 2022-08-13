@@ -55,3 +55,4 @@ uvloop==0.16.0
 uvtools==0.1.0
 watchgod==0.8.2
 websockets==10.3
+aiofiles
