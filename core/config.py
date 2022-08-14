@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     secret_key: str
     algorithm: str
     access_token_expire_minutes: int
-    PROJECT_NAME: str = "Job Board"
+    PROJECT_NAME: str = "BlogFolio"
     PROJECT_VERSION: str = "1.0.0"
 
     class Config:

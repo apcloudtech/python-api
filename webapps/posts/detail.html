@@ -1,0 +1,47 @@
+{% extends "shared/base.html" %}
+
+
+{% block title %}
+  <title>Post Detail</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-5">Post Detail</h1>
+    </div>
+  </div>
+
+  <div class="row">
+      <table class="table table-striped table-hover">
+        <tbody>
+          <tr>
+            <th scope="row">Post Title</th>
+            <td colspan="2">{{obj.title}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Post Number</th>
+            <td colspan="2">{{obj.id}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Poster Email</th>
+            <td colspan="2">{{obj.owner.email}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Content</th>
+            <td colspan="2">{{obj.content}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date</th>
+            <td colspan="2">{{obj.created_at}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Data Published</th>
+            <td colspan="2">{{obj.published}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
