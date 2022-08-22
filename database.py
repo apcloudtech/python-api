@@ -6,6 +6,10 @@ from core.config import settings
 # from psycopg2.extras import RealDictCursor
 # import time
 
+
+#details how to connect rds to pgadmin
+#https://www.youtube.com/watch?v=dlZPquxPVqo
+#https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html#USER_ConnectToPostgreSQLInstance.pgAdmin
 # calls class created in config.py, variables are defined in .env file.
 SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
